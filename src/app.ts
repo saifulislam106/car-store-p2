@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import carRouter from "./module/car/car.router";
+import { orderRoutes } from "./module/order/order.router";
 
 
 const app = express();
@@ -8,8 +9,12 @@ const app = express();
 app.use(express.json())
 
 
-// cars api 
+// car api 
 app.use("/api/cars" , carRouter)
+
+// order api 
+
+app.use("/api/orders" , orderRoutes)
 
 app.get("/" , (req :Request , res :Response)=>{
     res.send({

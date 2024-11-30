@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { carServices } from './car.service';
 
 
+
 const creatCar = async (req: Request, res: Response) => {
   try {
     const payload = req.body;
@@ -33,7 +34,7 @@ const getCar = async (req: Request, res: Response) => {
     res.status(500).json({
       message: 'An unexpected error occurred',
       success: false,
-      err,
+      error:err
     });
   }
 };

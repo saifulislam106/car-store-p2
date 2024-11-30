@@ -24,7 +24,7 @@ const updateCar = async(id:string ,data:Icar )=>{
 }
 
 const deleteCar = async(id:string )=>{
-    const result = await Car.findByIdAndDelete(id );
+    const result = await Car.findByIdAndDelete(id);
     return result;
 }
 
