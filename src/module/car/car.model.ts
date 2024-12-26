@@ -1,44 +1,45 @@
-import { model, Schema } from "mongoose";
-import { Icar } from "./car.interface";
+import { model, Schema } from 'mongoose';
+import { Icar } from './car.interface';
 
-
-const carSchema = new Schema<Icar>({
+const carSchema = new Schema<Icar>(
+  {
     brand: {
-        type:String,
-        required:true
+      type: String,
+      required: true,
     },
-    model:  {
-        type:String,
-        required:true
+    model: {
+      type: String,
+      required: true,
     },
-    year:  {
-        type:Number,
-        required:true
+    year: {
+      type: Number,
+      required: true,
     },
-    price:  {
-        type:Number,
-        required:true
+    price: {
+      type: Number,
+      required: true,
     },
-    category:  {
-        type:String,
-        enum: {
-            values: ['Sedan' , 'SUV' , 'Truck' , 'Coupe' , 'Convertible'],
-            message: '{VALUE} is not valid, please provide a valid category',
-          },
-        required:true
+    category: {
+      type: String,
+      enum: {
+        values: ['Sedan', 'SUV', 'Truck', 'Coupe', 'Convertible'],
+        message: '{VALUE} is not valid, please provide a valid category',
+      },
+      required: true,
     },
-    description:  {
-        type:String
-       
+    description: {
+      type: String,
     },
-    quantity:  {
-        type:Number,
-        
+    quantity: {
+      type: Number,
     },
-    inStock:  {
-        type:Boolean,
-        
+    inStock: {
+      type: Boolean,
     },
-})
+  },
+  {
+    timestamps: true,
+  },
+);
 
-export const Car = model<Icar>("Car" ,carSchema)
+export const Car = model<Icar>('Car', carSchema);
